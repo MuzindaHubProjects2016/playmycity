@@ -15,7 +15,15 @@
 <header class="<?php if($pageTitle !== 'PlayMyCity' && $pageTitle !== 'PlayMyCity | Fan Registration' && $pageTitle !== 'PlayMyCity | Artist Registration') {echo "shadow";}else{echo "landing-page-header";}?>">
 
   <div id="logo">
-  <a href="<?php if(isset($_SESSION['username'])){ echo 'artists.php';}else{echo 'index.php';} ?>">
+  <a href="<?php if(isset($_SESSION['username'])){
+                    if($_SESSION['user_type'] === 'Artist'){
+                      echo 'index.php';
+                    }else{
+                      echo 'artists.php';
+                      }
+                  }else{ 
+                    echo 'index.php';
+                  } ?>">
     <img src="img/play-my-city-Official-orange.png" class="logo-image">
   <!--      <h1>PlayMyCity</h1>-->
   </a>

@@ -40,37 +40,6 @@ foreach($row as $key => $value){
         <li class="bio-confirmed"><a href="#"><span class="span-label">Confirmed:</span><span id="bio-confirmed"><?php echo $result_arr['confirmed_shows']; ?></span></a></li>
       </ul>
   </div>
-  
-  <form class="request-artist" action="request-artist.php?artist=<?php echo $artist; ?>&fan=<?php echo $_SESSION['username'];?>" method="post">
-    <button type="submit" name="request_artist">
-      
-      <?php // change button text based on requested or not
-        if(isset($_SESSION['username'])){
-          
-          $fan = $_SESSION['username'];
-          $exists = "SELECT *
-                  FROM requests
-                  WHERE artist_id = '$artist' AND fan_username = '$fan' ";
-
-          $requested = mysqli_query($connect, $exists);
-          $row = mysqli_fetch_assoc($requested);
-          
-          if($row){
-            $_SESSION['requested'] = true;
-            echo "Unrequest";
-          }else{
-            $_SESSION['requested'] = false;
-          echo "Request ".$result_arr['artist_stagename'];
-          }
-          
-        }else{
-          echo "Login to request ".$result_arr['artist_stagename'];
-        }
-  
-      ?>
-      
-    </button> 
-</form>
 </div>
 
 <?php
@@ -89,5 +58,5 @@ echo '</div>';
   header('Location: artists.php');
 }
 ?>
-<a href="artists.php" id="request-artist-link">Request another Artist...</a>
+
 <?php include('includes/footer.php'); ?>
