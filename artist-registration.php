@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_assoc($artists)){
       $sql = "INSERT INTO playmycity_artists VALUES ('','$artist_stagename', '$artist_password', '$artist_firstname', '$artist_lastname', '', '', '$main_genre', '$artist_city', '' )";
       //with mysqli you dont have to specify the column names first
       mysqli_query($connect, $sql);
-      header('Location: login.php');
+      header('Location: login.php'); //TODO: redirect to successful login page
     }else {
       echo "Please fill in the Missing Field";
     }

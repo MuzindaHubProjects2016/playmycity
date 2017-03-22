@@ -37,6 +37,7 @@ while ($row = mysqli_fetch_assoc($fans)){
       $sql = "INSERT INTO playmycity_fans VALUES ('$fan_username', '$fan_firstname', '$fan_lastname', '$fan_password', '$fan_email', '$fan_city', '' )";
       //with mysqli you dont have to specify the column names first
       mysqli_query($connect, $sql);
+      header('Location: login.php'); //TODO: redirect to successful login page
     }else{
       echo "Please fill in the Missing Field";
     }

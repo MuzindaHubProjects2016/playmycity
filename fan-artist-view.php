@@ -17,9 +17,19 @@ INNER JOIN playmycity_artists
 ON requests.artist_id = playmycity_artists.artist_id
 WHERE requests.artist_id = '$artist'";
 
+$zero_requests = false;
 $result = mysqli_query($connect, $sql);
 $rowcount = mysqli_num_rows($result);
 $row = mysqli_fetch_assoc($result);
+
+if(!$row){
+  $zero_requests = true;  
+  $sql = "SELECT * FROM playmycity_artists WHERE artist_id ='$artist'";
+  $result2 = mysqli_query($connect, $sql);
+  $rowcount = mysqli_num_rows($result);
+  $row = mysqli_fetch_assoc($result2);
+  $row['fan_profile_pic'] = '';
+}
 
 if($row){  // if a record exists in requests table
 foreach($row as $key => $value){
@@ -79,10 +89,13 @@ echo '<h1 id="'.$result_arr['artist_id'].'" class="artist-name-big">'.$result_ar
 $result = mysqli_query($connect, $sql); //redeclare $result to refresh it
 
 echo '<div id="requests-propic" class="clearfix">';
+
 while($row = mysqli_fetch_assoc($result)){
+  if($zero_requests){
 
-  echo '<img class="requests-propic" src="'.$row['fan_profile_pic'].'">';
-
+  }else{
+    echo '<img alt="Fan Pro Pic" class="requests-propic" src="'.$row['fan_profile_pic'].'">';
+  }
 }
 echo '</div>';
 }else{
