@@ -614,10 +614,6 @@ li.city-name {
   border-bottom: 1px solid ghostwhite;
 }
 
-#confirm-show-btn {
-  width: 50%;
-}
-
 #bio-confirmed {
   padding: 3px 6px;
   font-weight: bolder;
