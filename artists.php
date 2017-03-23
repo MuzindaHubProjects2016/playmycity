@@ -20,10 +20,11 @@ $pageTitle = 'PlayMyCity | Artists';
           <?php if(isset($_SESSION['username'])){
           if($_SESSION['user_type']==='Artist'){
           echo '<a href="artist-artist-view.php?artist='.$artist.'">';
+          }
           }else{
           echo '<a href="fan-artist-view.php?artist='.$artist.'">';
-          }
-        }?>
+        }
+        ?>
         <li id="<?php echo $row['artist_id']; ?>" class="artist-name"><span id="stage-name"><?php echo $row['artist_stagename']; ?></span><span class="artist-image-url"><?php echo $row['artist_profile_pic']; ?></span><span class="requests"><?php echo $row['requests']; ?></span><span class="confirmed-shows"><?php echo $confirmed_shows; ?></span><span id="artist-city" class="hidden-data"> <?php echo $row['artist_city']; ?></span><span id="genre" class="hidden-data"> <?php echo $row['main_genre']; ?></span></li></a>
           
         <form action="request-artist.php?artist=<?php echo $row['artist_id']; ?>" method="post">
