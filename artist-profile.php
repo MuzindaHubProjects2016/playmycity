@@ -53,7 +53,42 @@ echo '<div id="artist-bio-requests-page" class="clearfix">
     </ul>
 </div>
 </div>';
+?>
 
+<div id="requests-by-city" class="clearfix">
+<h1>Requests by City</h1>
+  <ul id="city-list">
+<?php   
+  
+$sql="SELECT city_name FROM cities";
+$result = mysqli_query($connect, $sql);
+
+while($row = mysqli_fetch_assoc($result)){
+  foreach($row as $key => $value){
+  
+  $city_requests = "SELECT playmycity_fans.*, playmycity_artists.*
+  FROM playmycity_fans
+  INNER JOIN requests
+  ON playmycity_fans.fan_username = requests.fan_username
+  INNER JOIN playmycity_artists
+  ON requests.artist_id = playmycity_artists.artist_id
+  WHERE playmycity_fans.fan_city = '$value' AND requests.artist_id ='$profile'";
+  
+  $city_fans = mysqli_query($connect, $city_requests);
+  $rowcount = mysqli_num_rows($city_fans);
+
+?>
+  
+  <li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount; ?></span></li>
+  
+<?php 
+  }
+} 
+?>
+  </ul>
+</div>
+
+<?php
 echo '<h1 id="'.$result_arr['artist_id'].'" class="artist-name-big">'.$result_arr['artist_stagename'].'<span class="requests requests-big">'.$rowcount.'</span></h1>';
 
 $result = mysqli_query($connect, $my_requests); 

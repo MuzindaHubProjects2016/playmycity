@@ -44,6 +44,13 @@ header {
   clear: both;
 }
 
+#requests-by-city {
+  float: right;
+  width: 400px;
+  box-sizing: border-box;
+  color: rgb(62, 142, 178);
+}
+
 .requests-propic {
   display: inline-block;
   max-width: 5%;
@@ -421,6 +428,7 @@ td {
 }
 
 #artist-bio-requests-page {
+  float: left;
   border: 1px solid lightgrey;
   margin: 10px;
   cursor: default;
@@ -486,6 +494,7 @@ span.requests {
 
 h1.artist-name-big {
   color: grey;
+  clear: both;
 }
 
 span.requests-big {
@@ -590,7 +599,7 @@ span.confirmed-shows {
 
 li.city-name {
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 1rem;
   color: grey;
   padding: 10px;
   display: block;
