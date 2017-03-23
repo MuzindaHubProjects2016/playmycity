@@ -54,7 +54,7 @@ echo '<div id="artist-bio-requests-page" class="clearfix">
 </div>
 </div>';
 ?>
-
+<div class="artist-list-container clearfix">
 <div id="requests-by-city" class="clearfix">
 <h1>Requests by City</h1>
   <ul id="city-list">
@@ -79,15 +79,19 @@ while($row = mysqli_fetch_assoc($result)){
 
 ?>
   
-  <li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount2; ?></span></li>
+    <a><li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount2; ?></span></li></a>
+  
+  <form action="request-artist.php?artist=<?php echo $row['artist_id']; ?>" method="post">
+       <button type="submit" name="request_artist" class="play-my-city" id="confirm-show-btn">Confirm Show</button>
+  </form>
   
 <?php 
   }
 } 
 ?>
   </ul>
-</div>
-
+</div><!-- requests by city -->
+</div> <!-- end list wrap -->
 <?php
 echo '<h1 id="'.$result_arr['artist_id'].'" class="artist-name-big">'.$result_arr['artist_stagename'].'<span class="requests requests-big">'.$rowcount.'</span></h1>';
 

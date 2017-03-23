@@ -506,6 +506,11 @@ span.requests-big {
   background-color: rgb(178, 97, 0);
 }
 
+#confirm-show-btn {
+  float: right;
+  width: 40%;
+}
+
 span.confirmed-shows {
   text-align: center;
   font-size: .8rem;
@@ -598,12 +603,13 @@ span.confirmed-shows {
 }
 
 li.city-name {
+  float: left;
   cursor: pointer;
   font-size: 1rem;
   color: grey;
   padding: 10px;
   display: block;
-  width: 90%;
+  width: 50%;
   border-bottom: 1px solid ghostwhite;
 }
 
