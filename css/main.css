@@ -38,10 +38,18 @@ header {
   text-decoration: none;
   display: inline-block;
   padding-left: 20px;
+  padding-left: 20px;
+  font-weight: bold;
+  transition: .5s;
+}
+
+.nav-link:hover {
+  color: darkorange;
 }
 
 nav {
   float: right;
+  padding-top: 54px;
 }
 
 .span-label-bio {
@@ -52,7 +60,7 @@ nav {
 
 .span-label {
   display: inline-block;
-  width: 200px;
+  width: 150px;
   font-weight: bold;
 }
 
@@ -457,7 +465,7 @@ td {
   border: 1px solid lightgrey;
   margin: 10px;
   cursor: default;
-  width: 600px;
+  width: 500px;
 /*  height: 300px;*/
   font-size: 1rem;
   color: black;
