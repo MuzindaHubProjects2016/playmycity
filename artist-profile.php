@@ -75,11 +75,11 @@ while($row = mysqli_fetch_assoc($result)){
   WHERE playmycity_fans.fan_city = '$value' AND requests.artist_id ='$profile'";
   
   $city_fans = mysqli_query($connect, $city_requests);
-  $rowcount = mysqli_num_rows($city_fans);
+  $rowcount2 = mysqli_num_rows($city_fans);
 
 ?>
   
-  <li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount; ?></span></li>
+  <li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount2; ?></span></li>
   
 <?php 
   }
