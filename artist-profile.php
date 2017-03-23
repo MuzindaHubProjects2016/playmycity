@@ -81,8 +81,8 @@ while($row = mysqli_fetch_assoc($result)){
   
     <a><li class="city-name"><?php echo $value;  ?><span class="requests"><?php echo $rowcount2; ?></span></li></a>
   
-  <form action="request-artist.php?artist=<?php echo $row['artist_id']; ?>" method="post">
-       <button type="submit" name="request_artist" class="play-my-city" id="confirm-show-btn">Confirm Show</button>
+  <form action="confirm-show.php?artist=<?php echo $_SESSION['username']; ?>&city=<?php echo $row['city_name'] ?>" method="post">
+       <button type="submit" name="confirm_show" class="play-my-city" id="confirm-show-btn">Confirm Show</button>
   </form>
   
 <?php 
