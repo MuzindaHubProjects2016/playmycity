@@ -48,8 +48,8 @@ echo '<div id="artist-bio-requests-page" class="clearfix">
       <li><span class="span-label">Last Name:</span><span id="bio-lastname">'.$result_arr['artist_lastname'].'</span></li>
       <li><span class="span-label">Genre:</span><span id="bio-genre">'.$result_arr['main_genre'].'</span></li>
       <li><span class="span-label">City:</span><span id="bio-city">'.$result_arr['artist_city'].'</span></li>
-      <li><span class="span-label">My Requests:</span><span id="bio-requests">'.$rowcount.'</span></li>
-      <li class="bio-confirmed"><a href="#"><span class="span-label">Confirmed:</span><span id="bio-confirmed">'.$result_arr['confirmed_shows'].'</span></a></li>
+      <li><span class="span-label">Requests:</span><span id="bio-requests">'.$rowcount.'</span></li>
+      <li class="bio-confirmed"><a href="#"><span class="span-label">My Confirmed Shows:</span><span id="bio-confirmed">'.$result_arr['confirmed_shows'].'</span></a></li>
     </ul>
 </div>
 </div>';

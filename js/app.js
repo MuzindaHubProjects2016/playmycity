@@ -3,7 +3,7 @@ artistBio += '<div id="artist-bio">';
 artistBio += '<div id="artist-image"></div>';
 artistBio += '<div id="artist-details">';
 artistBio += '<ul><li><span class="span-label">Artist:</span><span id="bio-name"></span></li>';
-artistBio += '<li id="bio-rank"><span class="span-label">Rank:</span></li>';
+artistBio += '<li id="bio-rank"><span class="span-label hidden-data">Rank:</span></li>';
 artistBio += '<li><span class="span-label">Genre:</span><span id="bio-genre"></span></li>';
 artistBio += '<li><span class="span-label">City:</span><span id="bio-city"></span></li>';
 artistBio += '<li><span class="span-label">Requests:</span><span id="bio-requests"></span></li>';

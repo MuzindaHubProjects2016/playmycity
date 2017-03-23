@@ -31,7 +31,7 @@ header {
 
 .span-label {
   display: inline-block;
-  width: 100px;
+  width: 200px;
   font-weight: bold;
 }
 
@@ -207,6 +207,12 @@ div.login-type {
   text-align: center;
   display: inline-block;
   transition: .3s;
+}
+
+div.login-type:hover {
+  -ms-transform: scale(1.05, 1.05); /* IE 9 */
+  -webkit-transform: scale(1.05, 1.05); /* Safari */
+  transform: scale(1.05, 1.05);
 }
 
 .footer a {
@@ -415,7 +421,7 @@ td {
 }
 
 #artist-bio-requests-page {
-  border: 1px solid ghostwhite;
+  border: 1px solid lightgrey;
   margin: 10px;
   cursor: default;
   width: 600px;
@@ -483,6 +489,7 @@ h1.artist-name-big {
 }
 
 span.requests-big {
+  margin: 10px;
   color: white;
   font-size: 3rem;
   padding: 6px 18px;
