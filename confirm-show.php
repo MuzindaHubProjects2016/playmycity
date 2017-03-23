@@ -18,7 +18,16 @@ echo $city;
 $confirm_show = "INSERT INTO confirmed_shows VALUES ('$artist', '$city', '1')";
 mysqli_query($connect, $confirm_show);
 
-//header('Location: artist-profile.php?artist='.$artist);
+$new_shows = "SELECT * FROM confirmed_shows WHERE artist_id ='$artist'";
+$result = mysqli_query($connect, $new_shows);
+$rowcount = mysqli_num_rows($result);
+  
+$shows_update = "UPDATE playmycity_artists SET confirmed_shows ='$rowcount'
+WHERE artist_id = '$artist' ";
+mysqli_query($connect, $shows_update);
+
+
+header('Location: artist-profile.php?artist='.$artist);
 
 }else{
   header('Location: login.php');
