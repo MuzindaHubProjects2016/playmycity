@@ -30,9 +30,10 @@
   </div> <!-- end logo -->
 
     <nav>
-      <ul>
-        
-
+      <ul class="nav-list">
+        <li><a href="artists.php" class="nav-link">Artists</a></li> 
+        <li><a href="" class="nav-link">Cities</a></li>
+        <li><a href="" class="nav-link">Shows</a></li>
       </ul>
     </nav>
       <input type="text" name="search" placeholder="Search..." class="searchbox input-box">

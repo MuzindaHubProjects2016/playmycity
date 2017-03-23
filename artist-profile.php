@@ -38,6 +38,10 @@ foreach($row as $key => $value){
   $result_arr[$key] = $value;
 }
 
+$new_shows = "SELECT * FROM confirmed_shows WHERE artist_id ='$profile'";
+$shows = mysqli_query($connect, $new_shows);
+$confirmed_shows = mysqli_num_rows($shows);
+
 echo '<div id="artist-bio-requests-page" class="clearfix">
   <div id="artist-image-requests-page">
     <img class="requests-propic" src="'.$row['artist_profile_pic'].'">
@@ -49,7 +53,7 @@ echo '<div id="artist-bio-requests-page" class="clearfix">
       <li><span class="span-label">Genre:</span><span id="bio-genre">'.$result_arr['main_genre'].'</span></li>
       <li><span class="span-label">City:</span><span id="bio-city">'.$result_arr['artist_city'].'</span></li>
       <li><span class="span-label">Requests:</span><span id="bio-requests">'.$rowcount.'</span></li>
-      <li class="bio-confirmed"><a href="#"><span class="span-label">My Confirmed Shows:</span><span id="bio-confirmed">'.$result_arr['confirmed_shows'].'</span></a></li>
+      <li class="bio-confirmed"><a href="#"><span class="span-label">My Confirmed Shows:</span><span id="bio-confirmed">'.$confirmed_shows.'</span></a></li>
     </ul>
 </div>
 </div>';

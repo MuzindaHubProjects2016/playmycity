@@ -1,0 +1,32 @@
+<?php // change button text based on confirmed or not
+          if(isset($_SESSION['username'])){
+            $sql="SELECT city_id FROM cities WHERE city_name = '$value'";
+            $result = mysqli_query($connect, $sql);
+            $row = mysqli_fetch_assoc($result);
+            $city = $row['city_id'];
+            
+            echo $city;
+            
+            $artist = $_SESSION['username'];
+            
+            echo $artist;
+            $exists = "SELECT *
+            FROM confirmed_shows
+            WHERE artist_id = '$artist' AND city_id = '$city' ";
+
+            $confirmed = mysqli_query($connect, $exists);
+            $row = mysqli_fetch_assoc($confirmed);
+
+            if($row){
+              $_SESSION['confirmed'] = true;
+              echo "Cancel Show";
+            }else{
+              $_SESSION['confirmed'] = false;
+            echo "Confirm Show";
+            }
+
+          }else{
+            echo "Login to Confirm";
+          }
+
+        ?>
