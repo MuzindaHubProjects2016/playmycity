@@ -50,6 +50,15 @@ header {
   margin: 5px;
 }
 
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  background: url(../icons/selectbox-arrow.png) no-repeat 95% center white;
+}
+
 button {
   width: 100px;
   height: 50px;
@@ -61,6 +70,7 @@ button {
   font-weight: bold;
   margin: 20px;
   background-color: white;
+  transition: .5s;
 }
 
 #view-artist-details {

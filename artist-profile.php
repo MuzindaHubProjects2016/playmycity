@@ -61,7 +61,7 @@ $result = mysqli_query($connect, $my_requests);
 echo '<div id="requests-propic" class="clearfix">';
 while($row = mysqli_fetch_assoc($result)){
 
-  echo '<img class="requests-propic" src="'.$row['fan_profile_pic'].'">';
+  echo '<img alt="Fan Pro Pic" class="requests-propic" src="'.$row['fan_profile_pic'].'">';
 
 }
 echo '</div>';
